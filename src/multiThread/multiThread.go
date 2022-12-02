@@ -15,11 +15,11 @@ func worker(channel chan int) {
 func MultiThread() {
 	channel := make(chan int)
 
-	go func() {
-		for i := 0; i <= 50; i = i + 1 {
-			go worker(channel)
-		}
-	}()
+	// go func() {
+	for i := 0; i <= 50; i = i + 1 {
+		go worker(channel)
+	}
+	// }()
 
 	for i := 0; i <= 100; i = i + 1 {
 		channel <- i
